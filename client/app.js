@@ -19,7 +19,7 @@ function getBHKValue() {
 
 function onPageLoad(){
     console.log( "document loaded" );
-  var url = "http://127.0.0.1:5000/get_location_names";
+  var url = "/api/get_location_names";
   $.get(url,function(data, status) {
       console.log("got response for get_location_names request");
       // Fetch the data making the database calls
@@ -43,7 +43,7 @@ function onClickedEstimatePrice(){
   var location = document.getElementById("uiLocations");
   var estPrice = document.getElementById("uiEstimatedPrice");
 
-  var url = "http://127.0.0.1:5000/predict_home_price";
+  var url = "/api/predict_home_price";
 
   //Creating the J query to pass the form data
   $.post(url, {

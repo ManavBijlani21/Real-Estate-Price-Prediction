@@ -1,43 +1,38 @@
-## Real-Estate-Price-Prediction
+# Real-Estate-Price-Prediction  
 ![Demo Image](demo_image.png)
 
+## Table of Contents  
+- [About](#about)  
+- [Technologies Used](#technologies-used)  
+- [Deploy This App to Cloud (AWS EC2)](#deploy-this-app-to-cloud-aws-ec2)
 
-# About
-This machine learning model takes in a home prices dataset and takes Area (per sqrt), BHK, Bath and location from the user and estimates the price of the real estate property. The model is built using Sklearn and linear regression achieving an accuracy of 82% at predicting prices. A python Flask server has been created that uses the saved model to server http requests. A website component has been built in html, css and javascript that allows user to enter home square ft. area, bedress etc. 
+## About  
+This machine learning model predicts real estate prices based on user inputs such as:  
+- **Area (per sqft)**  
+- **Number of Bedrooms (BHK)**  
+- **Number of Bathrooms**  
+- **Location**  
 
-The coolest part of this project is that model is deplowed on AWS using an EC2 instance which runs the model in production cloud environment and makes the model more scalable.
+The model is built using **Sklearn** and **Linear Regression**, achieving an **82% accuracy** in price prediction.  
+A **Flask server** is used to handle HTTP requests, and a **web interface** is built using **HTML, CSS, and JavaScript** to allow users to input property details.  
 
-# Technologies Used
-1) Python
-2) AWS for model hosting
-3) Python Flask server for http server
-4) Numpy and Pandas for data cleaning
-5) Sklearn for model building
-6) HTML/CSS/Javascript for UI
+A key highlight of this project is that the model is **deployed on AWS EC2**, making it **scalable** and **cloud-hosted** in a **production environment**.  
 
-# Deploy this app to Cloud (AWS EC2)
-1) Create an EC2 instance using amazon console, also in security group add a rule to allow HTTP incoming traffic.
-2) Connect the instance to the ssh key using a command line. 
-3) Nginx setup 
-    i. Install nginx on EC2 instance using these commands :- 
-    ```
-    sudo apt-get update 
-    sudo apt-get install nginx 
-    ```
+## Technologies Used  
+- **Python** (Data Processing & Model Building)  
+- **AWS EC2** (Cloud Hosting)  
+- **Flask** (Backend HTTP Server)  
+- **NumPy & Pandas** (Data Cleaning)  
+- **Sklearn** (Model Training)  
+- **HTML, CSS, JavaScript** (Frontend UI)  
 
-    ii. Above will install nginx as well as run it. Check status of nginx using :- 
-    ```sudo service nginx status```
+## Deploy This App to Cloud (AWS EC2)
 
-    iii. Now load the cloud url in browser and you will see the Nginx server running!
-4) Copy all your local code to the EC2 instance. This can be done using Cyberduck for Mac users or Winscp for windows users. 
-5) Now our goal is to point Nginx to load our website properly. Create /etc/nginx/sites-available/ml.conf file. Add the content. 
-6) Create a symlink using this command :- 
-    ``` sudo ln -v -s /etc/nginx/sites-available/ml.conf ``` 
-7) Restart nginx :- 
-    ```sudo service nginx restart```
-8) Now install python packages in the root directory which can be done either by creating a virtual enviornment and using reqirements.txt file or can be done manually. 
-9) Run the following command to :- 
-    ```python3 /home/ubuntu/BangloreHomePrices/client/server.py```
+### 1) Create an EC2 Instance  
+- Use the **Amazon Console** to create an **EC2 instance**.  
+- In the **Security Group**, add a rule to **allow HTTP incoming traffic**.  
 
-This will be a fully functional website running in a production cloud environment. 
-
+### 2) Connect to the Instance  
+Connect using **SSH** with your private key:  
+```sh
+ssh -i "your-key.pem" ubuntu@your-ec2-instance-ip

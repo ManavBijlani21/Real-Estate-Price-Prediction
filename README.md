@@ -12,7 +12,6 @@ A key highlight of this project is its deployment on AWS using an EC2 instance, 
 - [Key Features](#key-features)
 - [Technologies Used](#technologies-used)
 - [Deployment on AWS EC2](#deployment-on-aws-ec2)
-- [Project Setup](#project-setup)
 
 ## Key Features
 • **Price Prediction:** Estimates real estate property prices based on area, BHK, bathrooms, and location.
@@ -67,22 +66,4 @@ A key highlight of this project is its deployment on AWS using an EC2 instance, 
         ```bash
         python3 /home/ubuntu/BangloreHomePrices/client/server.py
         ```
-
-## Project Setup
-
-1.  **Clone the Repository:**
-    ```bash
-    git clone [repository_url]
-    cd Real-Estate-Price-Prediction
-    ```
-2.  **Install Dependencies:**
-    ```bash
-    pip install -r requirements.txt #if you have requirements.txt
-    ```
-    or install them manually.
-3.  **Run the Flask Server Locally:**
-    ```bash
-    python client/server.py
-    ```
-4.  **Access the Application:**
-    * Open your web browser and navigate to `http://localhost:5000`.
+This will be fully functional website running in production cloud environment. 
